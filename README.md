@@ -12,13 +12,36 @@ This Dockerfile creates an Alpine Linux based container that clones the Fishtest
 docker build -t my-fishtest .
 ```
 
-### Run the Docker Container
+### Run the Docker Container with Docker Command
 
 ```bash
 docker run -e USERNAME=myusername -e PASSWORD=mypassword -e CONCURRENCY=5 my-fishtest
 ```
 
 Replace `myusername`, `mypassword` and `5` with your actual username, password and desired concurrency.
+
+### Run the Docker Container with Docker Compose
+
+You can also use Docker Compose to run the Docker container. Here's a sample `docker-compose.yml`:
+
+```yaml
+version: '3.8'
+services:
+  fishtest:
+    image: my-fishtest
+    environment:
+      USERNAME: myusername
+      PASSWORD: mypassword
+      CONCURRENCY: 5
+```
+
+Run your Docker container with Docker Compose using the following command:
+
+```bash
+docker-compose up
+```
+
+Replace `myusername`, `mypassword` and `5` with your actual username, password, and the desired number of CPU cores to be used.
 
 ## Security Note
 
