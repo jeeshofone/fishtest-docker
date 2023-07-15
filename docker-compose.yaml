@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  fishtest:
+    image: my-fishtest
+    environment:
+      USERNAME: myusername
+      PASSWORD: mypassword
+      CONCURRENCY: 5
